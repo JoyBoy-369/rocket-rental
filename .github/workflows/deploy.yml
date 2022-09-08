@@ -83,6 +83,10 @@ jobs:
   cypress:
     name: ⚫️ Cypress
     runs-on: ubuntu-latest
+    strategy:
+      - fail-fast: false
+        matrix:
+          machines: ["Kody", "Hannah", "Olivia"]
     steps:
       - name: 🛑 Cancel Previous Runs
         uses: styfle/cancel-workflow-action@0.10.0
@@ -114,7 +118,7 @@ jobs:
           wait-on: "http://localhost:8811"
           record: true
           parallel: true
-          group: GH Action parallel
+          group: Rocket Cypress
         env:
           PORT: "8811"
           CYPRESS_RECORD_KEY: ${{ secrets.CYPRESS_RECORD_KEY }}
