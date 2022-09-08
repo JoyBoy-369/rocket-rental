@@ -84,9 +84,9 @@ jobs:
     name: ⚫️ Cypress
     runs-on: ubuntu-latest
     strategy:
-      - fail-fast: false
-        matrix:
-          machines: ["Kody", "Hannah", "Olivia"]
+      fail-fast: false
+      matrix:
+        machines: ["Kody", "Hannah", "Olivia"]
     steps:
       - name: 🛑 Cancel Previous Runs
         uses: styfle/cancel-workflow-action@0.10.0
