@@ -8,14 +8,15 @@ generator client {
 }
 
 model User {
-  id    String @id @default(cuid())
-  email String @unique
+  id       String @id @default(cuid())
+  email    String @unique
+  username String @unique
 
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
 
   password Password?
-  notes    Note[]
+  notes     Note[]
 }
 
 model Password {
